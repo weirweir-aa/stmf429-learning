@@ -82,3 +82,5 @@
 ..\..\output\main.o: ..\..\Drivers\./BSP/KEY/key.h
 ..\..\output\main.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
 ..\..\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+..\..\output\main.o: ..\..\Drivers\./BSP/KEY/key_exit.h
+..\..\output\main.o: ..\..\Drivers\CMSIS\Include\core_cm4.h

@@ -78,3 +78,5 @@
 ..\..\output\key.o: ..\..\Drivers\./SYSTEM/delay/delay.h
 ..\..\output\key.o: ..\..\Drivers\./SYSTEM/sys/sys.h
 ..\..\output\key.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
+..\..\output\key.o: ..\..\Drivers\./BSP/LED/led.h
+..\..\output\key.o: ..\..\Drivers\CMSIS\Include\core_cm4.h

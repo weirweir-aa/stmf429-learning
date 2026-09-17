@@ -1,0 +1,38 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "STM32F429 (Keil MDK / armclang)",
+            // 只列 01-LED 这一份，避免把 00-standard 里的同名库也扫进来导致重复定义
+            "includePath": [
+                "${workspaceFolder}/01-LED/Drivers/CMSIS/Device/ST/STM32F4xx/Include",
+                "${workspaceFolder}/01-LED/Drivers/STM32F4xx_HAL_Driver/Inc",
+                "${workspaceFolder}/01-LED/Drivers/CMSIS/Include",
+                "${workspaceFolder}/01-LED/Drivers",
+                "${workspaceFolder}/01-LED/User"
+            ],
+            // 与 atk_f429.uvprojx 里的 Define 保持一致
+            "defines": [
+                "USE_HAL_DRIVER",
+                "STM32F429xx",
+                "__ARMCC_VERSION=6190004"
+            ],
+            "compilerPath": "D:/Keil_v5/ARM/ARMCLANG/bin/armclang.exe",
+            "compilerArgs": [
+                "--target=arm-arm-none-eabi",
+                "-mcpu=cortex-m4",
+                "-mfpu=fpv4-sp-d16",
+                "-mfloat-abi=hard"
+            ],
+            "cStandard": "c99",
+            "cppStandard": "c++14",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/01-LED/Drivers",
+                    "${workspaceFolder}/01-LED/User"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ]
+}

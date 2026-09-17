@@ -23,6 +23,7 @@
 #include "./SYSTEM/delay/delay.h"
 #include "./BSP/LED/led.h"
 #include "./BSP/KEY/key.h"
+#include "./BSP/KEY/key_exit.h"
 
 int main(void)
 {
@@ -31,32 +32,11 @@ int main(void)
     delay_init(180);                            /* 延时初始化 */
 	
     led_init();                                 /* 初始化LED */
-	key_init();
+    key_exit_init();
 
     while(1)
     {
-		KEY_e key = key_scan();
-		
-         if (key == KEY0)
-        {
-            led_toggle(LED_0);
-            led_toggle(LED_1);
-			delay_ms(500);
-        }
-        else if (key == KEY1)
-        {
-            led_on(LED_0);
-            led_off(LED_1);
-        }
-        else if (key == KEY2)
-        {
-            led_off(LED_0);
-            led_on(LED_1);
-        }else
-        {
-            led_off(LED_0);                                 /* 翻转LED0 */
-            led_off(LED_1);                                 /* 翻转LED1 */
-        }
+		delay_ms(100);
     }
 }
 
