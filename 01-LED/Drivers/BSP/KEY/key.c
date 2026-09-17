@@ -142,3 +142,29 @@ KEY_e key_scan(void)
     return KEY_NUM;
 }
 
+//²âÊÔ
+void key_test(void)
+{
+    KEY_e key = key_scan();
+		
+    if (key == KEY0)
+    {
+        led_toggle(LED_0);
+        led_toggle(LED_1);
+        delay_ms(500);
+    }
+    else if (key == KEY1)
+    {
+        led_on(LED_0);
+        led_off(LED_1);
+    }
+    else if (key == KEY2)
+    {
+        led_off(LED_0);
+        led_on(LED_1);
+    }else
+    {
+        led_off(LED_0);                                 /* ·­×ªLED0 */
+        led_off(LED_1);                                 /* ·­×ªLED1 */
+    }
+}

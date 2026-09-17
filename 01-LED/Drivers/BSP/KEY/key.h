@@ -35,6 +35,7 @@ extern bool KEY_UP_PRES;
 
 void key_init(void);
 KEY_e key_scan(void);
+void key_test(void);
 
 #endif 
 
