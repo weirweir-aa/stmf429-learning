@@ -22,10 +22,10 @@ void led_on(LED_e led)
     switch (led)
     {
         case LED_0:
-            HAL_GPIO_WritePin(LED0_GPIO_PORT, LED0_GPIO_PIN, GPIO_PIN_SET);
+            HAL_GPIO_WritePin(LED0_GPIO_PORT, LED0_GPIO_PIN, GPIO_PIN_RESET);
             break;
         case LED_1:
-            HAL_GPIO_WritePin(LED1_GPIO_PORT, LED1_GPIO_PIN, GPIO_PIN_SET);
+            HAL_GPIO_WritePin(LED1_GPIO_PORT, LED1_GPIO_PIN, GPIO_PIN_RESET);
             break;
         default:
             break;
@@ -37,10 +37,10 @@ void led_off(LED_e led)
     switch (led)
     {
         case LED_0:
-            HAL_GPIO_WritePin(LED0_GPIO_PORT, LED0_GPIO_PIN, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(LED0_GPIO_PORT, LED0_GPIO_PIN, GPIO_PIN_SET);
             break;
         case LED_1:
-            HAL_GPIO_WritePin(LED1_GPIO_PORT, LED1_GPIO_PIN, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(LED1_GPIO_PORT, LED1_GPIO_PIN, GPIO_PIN_SET);
             break;
         default:
             break;
@@ -62,3 +62,4 @@ void led_toggle(LED_e led)
             break;
     }
 }
+

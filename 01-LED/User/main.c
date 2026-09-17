@@ -21,21 +21,42 @@
 #include "./SYSTEM/sys/sys.h"
 #include "./SYSTEM/usart/usart.h"
 #include "./SYSTEM/delay/delay.h"
-#include "./Drivers/BSP/LED/led.h"
-
+#include "./BSP/LED/led.h"
+#include "./BSP/KEY/key.h"
 
 int main(void)
 {
     HAL_Init();                                 /* 初始化HAL库 */
     sys_stm32_clock_init(360, 25, 2, 8);        /* 设置时钟,180Mhz */
     delay_init(180);                            /* 延时初始化 */
+	
     led_init();                                 /* 初始化LED */
+	key_init();
 
     while(1)
     {
-        led_toggle(LED_0);                                 /* 翻转LED0 */
-        led_toggle(LED_1);                                 /* 翻转LED1 */
-        delay_ms(500); 
+		KEY_e key = key_scan();
+		
+         if (key == KEY0)
+        {
+            led_toggle(LED_0);
+            led_toggle(LED_1);
+			delay_ms(500);
+        }
+        else if (key == KEY1)
+        {
+            led_on(LED_0);
+            led_off(LED_1);
+        }
+        else if (key == KEY2)
+        {
+            led_off(LED_0);
+            led_on(LED_1);
+        }else
+        {
+            led_off(LED_0);                                 /* 翻转LED0 */
+            led_off(LED_1);                                 /* 翻转LED1 */
+        }
     }
 }
 

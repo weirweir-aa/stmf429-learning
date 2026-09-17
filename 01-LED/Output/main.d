@@ -77,3 +77,8 @@
 ..\..\output\main.o: ..\..\Drivers\./SYSTEM/usart/usart.h
 ..\..\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\main.o: ..\..\Drivers\./SYSTEM/delay/delay.h
+..\..\output\main.o: ..\..\Drivers\./BSP/LED/led.h
+..\..\output\main.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
+..\..\output\main.o: ..\..\Drivers\./BSP/KEY/key.h
+..\..\output\main.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
+..\..\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
